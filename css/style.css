@@ -1,0 +1,117 @@
+*{margin: 0; padding: 0;box-sizing: border-box ;}
+
+:root{
+    --bg-main:#000000;
+    --bg-card:#6c0141;
+    --border-color: #efc745;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
+    height: 100vh;
+  
+    overflow-x: hidden!important;
+    background-color: var(--bg-main);
+}
+/* .card{
+           width: 10rem;
+           height: 10rem;
+           background-color: var(--bg-card);
+           background-size: contain;
+            border-radius: .6rem;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            padding: 2rem;
+            background-repeat: no-repeat;
+            background-size: cover;
+        } */
+
+        h1{
+            color: #fff;
+            font-family: "Lexend Deca Light";
+            font-size: 4rem;
+        }
+
+        span{
+            color: var(--border-color);
+        }
+        #card-section{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 1rem;
+            max-width: 100%;
+        }
+          /* .card_selected{
+           border: .2rem solid var(--border-color);
+     } 
+      .card_match{
+            border: .2rem solid purple;
+        } */
+
+        .card {
+            position: relative;
+            transition: all .4s linear;
+            transform-style: preserve-3d;
+        }
+
+        .card,
+        .back-card,
+        .front-card {
+            height: 10rem;
+            width: 10rem;
+        }
+        .back-card,
+        .front-card {
+            position: absolute;
+            backface-visibility: hidden;
+        }
+
+        .front-card {
+            background: var(--border-color);
+            background-size: cover;
+            border-radius: .6rem;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            padding: 2rem;
+        }
+
+        .back-card {
+            transform: rotateY(180deg);
+            /* background-color: #6589F9; */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            padding: 2rem;
+        }
+        .card_selected{
+            transform: rotateY(180deg);
+        }
+
+        .card_match .front-card{
+            background-color: var(--bg-card);
+        }
+        @media (max-width: 768px) {
+            #card-section {
+                display: grid;
+                grid-template-columns: repeat(4,0.1fr);
+                gap: 12px;
+            }
+            .card, .back-card, .front-card {
+                height: 5rem;
+                width: 5rem;
+            }
+            h1 {
+                color: #fff;
+                font-family: "Lexend Deca Light";
+                font-size: 2.5rem;
+            }
+            body{
+                overflow-x: hidden;
+            }
+          
+          }
+          
+          
